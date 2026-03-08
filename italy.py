@@ -2,7 +2,7 @@ from maputils import *
 
 class PozzalloPortToStationScene(TileMapScene):
     def create_tile_map(self, **kwargs):
-        return TileMap(36.725833696919764, 14.844501128492244, 15, **kwargs)
+        return TileMap(36.72522888144327, 14.84452309806404, 15, **kwargs)
 
     def construct(self):
         route = self.load_geojson("geojson/italy/pozzallo_port_to_station.geojson")
