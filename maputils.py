@@ -27,7 +27,7 @@ def route_rate(route: VMobject, rate_func: Callable[[float], float] = smooth) ->
     def curve_rf(t):
         t = rate_func(t)
         if t <= 0: return 0
-        if t >= 1: return 1
+        if t >= cumulative_t[-1]: return 1
 
         # find index of current curve
         i = bisect_right(cumulative_t, t) - 1
