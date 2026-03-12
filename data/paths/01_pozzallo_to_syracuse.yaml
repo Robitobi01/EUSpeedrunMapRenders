@@ -1,0 +1,39 @@
+name: Pozzallo to Syracuse
+transport: train
+start:
+  lat: 36.733888
+  lon: 14.848337
+  name: Pozzallo
+  datetime: '2025-09-08T15:01:00Z'
+  offset_minutes: 0
+end:
+  lat: 37.068889
+  lon: 15.280556
+  name: Syracuse
+  offset_minutes: 77
+waypoints:
+- lat: 36.778052
+  lon: 14.914165
+  name: Ispica
+  offset_minutes: 8
+  stopped_minutes: 1
+- lat: 36.815834
+  lon: 14.952774
+  name: Rosolini
+  offset_minutes: 17
+  stopped_minutes: 5
+- lat: 36.882498
+  lon: 15.074164
+  name: Noto
+  offset_minutes: 37
+  stopped_minutes: 1
+- lat: 36.907218
+  lon: 15.125555
+  name: Avola
+  offset_minutes: 44
+  stopped_minutes: 1
+- lat: 36.969163
+  lon: 15.211393
+  name: Fontane Bianche
+  offset_minutes: 61
+  stopped_minutes: 1

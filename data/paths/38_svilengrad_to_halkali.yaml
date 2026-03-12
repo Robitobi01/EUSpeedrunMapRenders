@@ -1,0 +1,29 @@
+name: Svilengrad to Halkalı
+transport: train
+start:
+  lat: 41.763623
+  lon: 26.20263
+  name: Svilengrad
+  datetime: '2025-09-21T00:45:00Z'
+  offset_minutes: 0
+end:
+  lat: 41.018336
+  lon: 28.766389
+  name: Halkalı
+  offset_minutes: 551
+waypoints:
+- lat: 41.718892
+  lon: 26.361388
+  name: Kapikule
+  offset_minutes: 20
+  stopped_minutes: 115
+- lat: 41.654997
+  lon: 26.579997
+  name: Edirne
+  offset_minutes: 168
+  stopped_minutes: 61
+- lat: 41.283329
+  lon: 27.996391
+  name: Çerkezköy
+  offset_minutes: 446
+  stopped_minutes: 2

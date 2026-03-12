@@ -1,0 +1,69 @@
+name: Videle to Giurgiu
+transport: train
+start:
+  lat: 44.283892
+  lon: 25.5375
+  name: Videle
+  datetime: '2025-09-19T16:20:00Z'
+  offset_minutes: 0
+end:
+  lat: 43.89528
+  lon: 25.961386
+  name: Giurgiu
+  offset_minutes: 98
+waypoints:
+- lat: 44.214891
+  lon: 25.546975
+  name: Rădulești
+  offset_minutes: 19
+  stopped_minutes: 1
+- lat: 44.151967
+  lon: 25.552314
+  name: Târnavele
+  offset_minutes: 28
+  stopped_minutes: 1
+- lat: 44.086327
+  lon: 25.596604
+  name: Vlașca
+  offset_minutes: 37
+  stopped_minutes: 1
+- lat: 44.051287
+  lon: 25.637568
+  name: Răsuceni
+  offset_minutes: 44
+  stopped_minutes: 1
+- lat: 44.018738
+  lon: 25.668068
+  name: Toporu
+  offset_minutes: 49
+  stopped_minutes: 1
+- lat: 43.980057
+  lon: 25.775328
+  name: Chiriacu
+  offset_minutes: 61
+  stopped_minutes: 1
+- lat: 43.950887
+  lon: 25.844994
+  name: Stănești
+  offset_minutes: 69
+  stopped_minutes: 1
+- lat: 43.935974
+  lon: 25.887684
+  name: Oncești
+  offset_minutes: 75
+  stopped_minutes: 1
+- lat: 43.949548
+  lon: 25.917906
+  name: Balanoaia
+  offset_minutes: 80
+  stopped_minutes: 1
+- lat: 43.938814
+  lon: 25.948927
+  name: Cetatea
+  offset_minutes: 84
+  stopped_minutes: 1
+- lat: 43.923614
+  lon: 25.965279
+  name: Giurgiu Nord
+  offset_minutes: 91
+  stopped_minutes: 1

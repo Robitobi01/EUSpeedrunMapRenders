@@ -1,0 +1,49 @@
+name: Nice Ville to Marseille Saint-Charles
+transport: train
+start:
+  lat: 43.704448
+  lon: 7.261945
+  name: Nice Ville
+  datetime: '2025-09-09T17:25:00Z'
+  offset_minutes: 0
+end:
+  lat: 43.302774
+  lon: 5.380278
+  name: Marseille Saint-Charles
+  offset_minutes: 158
+waypoints:
+- lat: 43.670837
+  lon: 7.216109
+  name: Nice Saint-Augustin
+  offset_minutes: 6
+  stopped_minutes: 2
+- lat: 43.585835
+  lon: 7.119448
+  name: Antibes
+  offset_minutes: 20
+  stopped_minutes: 2
+- lat: 43.554166
+  lon: 7.02
+  name: Cannes
+  offset_minutes: 33
+  stopped_minutes: 2
+- lat: 43.423607
+  lon: 6.769165
+  name: Saint-Raphaël Valescure
+  offset_minutes: 56
+  stopped_minutes: 2
+- lat: 43.455833
+  lon: 6.482499
+  name: Les Arcs-Draguignan
+  offset_minutes: 73
+  stopped_minutes: 1
+- lat: 43.297218
+  lon: 6.186943
+  name: Carnoules
+  offset_minutes: 93
+  stopped_minutes: 1
+- lat: 43.128329
+  lon: 5.929168
+  name: Toulon
+  offset_minutes: 113
+  stopped_minutes: 2

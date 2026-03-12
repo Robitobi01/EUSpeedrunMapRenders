@@ -1,0 +1,56 @@
+name: Ormož to Maribor
+transport: train
+start:
+  lat: 46.403333
+  lon: 16.156115
+  name: Ormož
+  datetime: '2025-09-18T06:15:00Z'
+  offset_minutes: 0
+end:
+  lat: 46.561948
+  lon: 15.657501
+  name: Maribor
+  offset_minutes: 46
+waypoints:
+- lat: 46.41528
+  lon: 16.105002
+  name: Velika Nedelja
+  offset_minutes: 3
+- lat: 46.419442
+  lon: 16.048055
+  name: Osluševci
+  offset_minutes: 6
+  stopped_minutes: 1
+- lat: 46.422498
+  lon: 15.878609
+  name: Ptuj
+  offset_minutes: 13
+  stopped_minutes: 1
+- lat: 46.403054
+  lon: 15.855282
+  name: Hajdina
+  offset_minutes: 17
+- lat: 46.400834
+  lon: 15.800555
+  name: Kidričevo
+  offset_minutes: 20
+  stopped_minutes: 1
+- lat: 46.400834
+  lon: 15.724444
+  name: Cirkovce
+  offset_minutes: 25
+- lat: 46.400834
+  lon: 15.696946
+  name: Sikole
+  offset_minutes: 27
+  stopped_minutes: 1
+- lat: 46.45361
+  lon: 15.663892
+  name: Rače
+  offset_minutes: 35
+  stopped_minutes: 1
+- lat: 46.501109
+  lon: 15.663056
+  name: Hoče
+  offset_minutes: 39
+  stopped_minutes: 1

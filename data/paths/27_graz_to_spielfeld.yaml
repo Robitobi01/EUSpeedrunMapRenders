@@ -1,0 +1,65 @@
+name: Graz Hbf to Spielfeld-Strass
+transport: train
+start:
+  lat: 47.07222
+  lon: 15.416392
+  name: Graz Hbf
+  datetime: '2025-09-17T19:40:00Z'
+  offset_minutes: 0
+end:
+  lat: 46.709443
+  lon: 15.629167
+  name: Spielfeld-Strass
+  offset_minutes: 49
+waypoints:
+- lat: 47.058332
+  lon: 15.41917
+  name: Graz Don Bosco (Bahnsteige 1-2)
+  offset_minutes: 2
+- lat: 47.030834
+  lon: 15.429166
+  name: Graz Puntigam
+  offset_minutes: 6
+- lat: 47.012496
+  lon: 15.440555
+  name: Feldkirchen-Seiersberg
+  offset_minutes: 8
+  stopped_minutes: 1
+- lat: 46.997502
+  lon: 15.449724
+  name: Flughafen Graz-Feldkirchen
+  offset_minutes: 11
+- lat: 46.96444
+  lon: 15.470004
+  name: Kalsdorf B.Graz
+  offset_minutes: 14
+  stopped_minutes: 1
+- lat: 46.916392
+  lon: 15.476944
+  name: Werndorf
+  offset_minutes: 20
+  stopped_minutes: 1
+- lat: 46.885281
+  lon: 15.520002
+  name: Wildon
+  offset_minutes: 25
+  stopped_minutes: 2
+- lat: 46.855832
+  lon: 15.532218
+  name: Lebring
+  offset_minutes: 30
+- lat: 46.801942
+  lon: 15.542502
+  name: Kaindorf/Sulm
+  offset_minutes: 34
+  stopped_minutes: 1
+- lat: 46.779999
+  lon: 15.547221
+  name: Leibnitz
+  offset_minutes: 38
+  stopped_minutes: 1
+- lat: 46.727781
+  lon: 15.58556
+  name: Ehrenhausen
+  offset_minutes: 44
+  stopped_minutes: 1

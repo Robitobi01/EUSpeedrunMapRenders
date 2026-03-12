@@ -1,0 +1,13 @@
+name: Warsaw West to Warsaw Central
+transport: train
+start:
+  lat: 52.220001
+  lon: 20.965281
+  name: Warsaw West
+  datetime: '2025-09-17T07:40:00Z'
+  offset_minutes: 0
+end:
+  lat: 52.228613
+  lon: 21.002775
+  name: Warsaw Central
+  offset_minutes: 4

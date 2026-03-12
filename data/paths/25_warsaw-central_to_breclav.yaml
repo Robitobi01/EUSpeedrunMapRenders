@@ -1,0 +1,104 @@
+name: Warsaw Central to Břeclav
+transport: train
+start:
+  lat: 52.228613
+  lon: 21.002775
+  name: Warsaw Central
+  datetime: '2025-09-17T08:52:00Z'
+  offset_minutes: 0
+end:
+  lat: 48.758057
+  lon: 16.896943
+  name: Břeclav
+  offset_minutes: 417
+waypoints:
+- lat: 52.220001
+  lon: 20.965281
+  name: Warsaw West
+  offset_minutes: 4
+  stopped_minutes: 1
+- lat: 51.361666
+  lon: 20.235554
+  name: Opoczno Południe
+  offset_minutes: 58
+  stopped_minutes: 3
+- lat: 50.850279
+  lon: 19.943054
+  name: Włoszczowa Północ
+  offset_minutes: 88
+  stopped_minutes: 3
+- lat: 50.48111
+  lon: 19.423055
+  name: Zawiercie
+  offset_minutes: 123
+  stopped_minutes: 1
+- lat: 50.33028
+  lon: 19.185282
+  name: Dąbrowa Górnicza
+  offset_minutes: 139
+  stopped_minutes: 2
+- lat: 50.278888
+  lon: 19.126115
+  name: Sosnowiec Główny
+  offset_minutes: 155
+  stopped_minutes: 2
+- lat: 50.257503
+  lon: 19.017219
+  name: Katowice
+  offset_minutes: 170
+  stopped_minutes: 3
+- lat: 50.13694
+  lon: 18.964165
+  name: Tychy
+  offset_minutes: 190
+  stopped_minutes: 1
+- lat: 49.975278
+  lon: 18.953333
+  name: Pszczyna
+  offset_minutes: 208
+  stopped_minutes: 1
+- lat: 49.869996
+  lon: 18.624723
+  name: Zebrzydowice
+  offset_minutes: 242
+  stopped_minutes: 8
+- lat: 49.899166
+  lon: 18.356944
+  name: Bohumín
+  offset_minutes: 270
+  stopped_minutes: 20
+- lat: 49.851388
+  lon: 18.266108
+  name: Ostrava hlavní nádraží
+  offset_minutes: 297
+  stopped_minutes: 2
+- lat: 49.818056
+  lon: 18.208334
+  name: Ostrava-Svinov
+  offset_minutes: 305
+  stopped_minutes: 2
+- lat: 49.564165
+  lon: 17.73889
+  name: Hranice na Moravě
+  offset_minutes: 332
+  stopped_minutes: 2
+- lat: 49.444447
+  lon: 17.448332
+  name: Přerov
+  offset_minutes: 354
+  stopped_minutes: 3
+- lat: 49.204165
+  lon: 17.529999
+  name: Otrokovice
+  offset_minutes: 374
+  stopped_minutes: 2
+- lat: 49.076114
+  lon: 17.422776
+  name: Staré Město u Uherského Hradiště
+  offset_minutes: 388
+  stopped_minutes: 1
+- lat: 48.856669
+  lon: 17.123057
+  name: Hodonín
+  offset_minutes: 405
+  stopped_minutes: 1

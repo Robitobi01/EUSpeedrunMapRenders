@@ -1,0 +1,53 @@
+name: Cologne Hbf to Hamburg Hbf
+transport: train
+start:
+  lat: 50.943056
+  lon: 6.958613
+  name: Cologne Hbf
+  datetime: '2025-09-14T13:11:00Z'
+  offset_minutes: 0
+end:
+  lat: 53.552778
+  lon: 10.006945
+  name: Hamburg Hbf
+  offset_minutes: 243
+waypoints:
+- lat: 51.219996
+  lon: 6.794443
+  name: Düsseldorf Hbf
+  offset_minutes: 21
+  stopped_minutes: 2
+- lat: 51.429723
+  lon: 6.775835
+  name: Duisburg Hbf
+  offset_minutes: 34
+  stopped_minutes: 2
+- lat: 51.451387
+  lon: 7.014723
+  name: Essen Hbf
+  offset_minutes: 47
+  stopped_minutes: 2
+- lat: 51.616393
+  lon: 7.203614
+  name: Recklinghausen Hbf
+  offset_minutes: 68
+  stopped_minutes: 4
+- lat: 51.956671
+  lon: 7.635833
+  name: Münster (Westf) Hbf
+  offset_minutes: 103
+  stopped_minutes: 3
+- lat: 52.272777
+  lon: 8.06167
+  name: Osnabrück Hbf
+  offset_minutes: 130
+  stopped_minutes: 2
+- lat: 53.083613
+  lon: 8.813887
+  name: Bremen Hbf
+  offset_minutes: 184
+  stopped_minutes: 2
+- lat: 53.455829
+  lon: 9.991663
+  name: Hamburg-Harburg
+  offset_minutes: 230

@@ -1,0 +1,69 @@
+name: Marseille Saint-Charles to Madrid-Puerta de Atocha
+transport: train
+start:
+  lat: 43.302774
+  lon: 5.380278
+  name: Marseille Saint-Charles
+  datetime: '2025-09-10T08:04:00Z'
+  offset_minutes: 0
+end:
+  lat: 40.406386
+  lon: -3.690836
+  name: Madrid-Puerta de Atocha
+  offset_minutes: 468
+waypoints:
+- lat: 43.454997
+  lon: 5.317218
+  name: Aix-en-Provence TGV
+  offset_minutes: 11
+  stopped_minutes: 3
+- lat: 43.921663
+  lon: 4.78556
+  name: Avignon TGV
+  offset_minutes: 33
+  stopped_minutes: 3
+- lat: 43.83222
+  lon: 4.365836
+  name: Nîmes
+  offset_minutes: 55
+  stopped_minutes: 3
+- lat: 43.604721
+  lon: 3.880553
+  name: Montpellier Saint-Roch
+  offset_minutes: 84
+  stopped_minutes: 5
+- lat: 43.190552
+  lon: 3.005552
+  name: Narbonne
+  offset_minutes: 147
+  stopped_minutes: 3
+- lat: 42.695831
+  lon: 2.879443
+  name: Perpignan
+  offset_minutes: 184
+  stopped_minutes: 10
+- lat: 42.264726
+  lon: 2.943608
+  name: Figueres Vilafant
+  offset_minutes: 215
+  stopped_minutes: 3
+- lat: 41.979166
+  lon: 2.816941
+  name: Girona
+  offset_minutes: 232
+  stopped_minutes: 3
+- lat: 41.379442
+  lon: 2.140556
+  name: Barcelona-Sants
+  offset_minutes: 274
+  stopped_minutes: 12
+- lat: 41.191945
+  lon: 1.272774
+  name: Camp de Tarragona
+  offset_minutes: 317
+  stopped_minutes: 2
+- lat: 41.658611
+  lon: -0.911668
+  name: Zaragoza-Delicias
+  offset_minutes: 378
+  stopped_minutes: 3

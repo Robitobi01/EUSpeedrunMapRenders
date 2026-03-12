@@ -1,0 +1,59 @@
+name: Narbonne to Toulouse Matabiau
+transport: train
+start:
+  lat: 43.190552
+  lon: 3.005552
+  name: Narbonne
+  datetime: '2025-09-11T19:09:00Z'
+  offset_minutes: 0
+end:
+  lat: 43.611113
+  lon: 1.45361
+  name: Toulouse Matabiau
+  offset_minutes: 93
+waypoints:
+- lat: 43.2
+  lon: 2.769442
+  name: Lézignan-Corbières
+  offset_minutes: 12
+  stopped_minutes: 1
+- lat: 43.218059
+  lon: 2.351668
+  name: Carcassonne
+  offset_minutes: 33
+  stopped_minutes: 2
+- lat: 43.243885
+  lon: 2.119441
+  name: Bram
+  offset_minutes: 45
+  stopped_minutes: 1
+- lat: 43.312221
+  lon: 1.950282
+  name: Castelnaudary
+  offset_minutes: 54
+  stopped_minutes: 1
+- lat: 43.398329
+  lon: 1.714719
+  name: Villefranche-de-Lauragais
+  offset_minutes: 65
+  stopped_minutes: 1
+- lat: 43.453613
+  lon: 1.620836
+  name: Baziège
+  offset_minutes: 72
+  stopped_minutes: 1
+- lat: 43.51722
+  lon: 1.542504
+  name: Escalquens
+  offset_minutes: 79
+  stopped_minutes: 1
+- lat: 43.547496
+  lon: 1.513055
+  name: Labège-Innopole
+  offset_minutes: 83
+  stopped_minutes: 1
+- lat: 43.57361
+  lon: 1.480281
+  name: Montaudran
+  offset_minutes: 87
+  stopped_minutes: 1

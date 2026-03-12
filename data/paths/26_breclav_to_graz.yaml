@@ -1,0 +1,44 @@
+name: Břeclav to Graz Hbf
+transport: train
+start:
+  lat: 48.758057
+  lon: 16.896943
+  name: Břeclav
+  datetime: '2025-09-17T15:55:00Z'
+  offset_minutes: 0
+end:
+  lat: 47.07222
+  lon: 15.416392
+  name: Graz Hbf
+  offset_minutes: 218
+waypoints:
+- lat: 48.185004
+  lon: 16.377222
+  name: Vienna Hbf
+  offset_minutes: 55
+  stopped_minutes: 8
+- lat: 48.174442
+  lon: 16.333058
+  name: Vienna Meidling
+  offset_minutes: 68
+  stopped_minutes: 2
+- lat: 47.810558
+  lon: 16.233053
+  name: Wiener Neustadt Hbf
+  offset_minutes: 95
+  stopped_minutes: 2
+- lat: 47.608058
+  lon: 15.677502
+  name: Mürzzuschlag
+  offset_minutes: 152
+  stopped_minutes: 2
+- lat: 47.445003
+  lon: 15.292224
+  name: Kapfenberg
+  offset_minutes: 174
+  stopped_minutes: 2
+- lat: 47.413891
+  lon: 15.279442
+  name: Bruck/Mur
+  offset_minutes: 181
+  stopped_minutes: 2

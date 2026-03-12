@@ -1,0 +1,87 @@
+name: Komárom to Budapest-Kelenföld
+transport: train
+start:
+  lat: 47.749441
+  lon: 18.113615
+  name: Komárom
+  datetime: '2025-09-18T14:03:00Z'
+  offset_minutes: 0
+end:
+  lat: 47.464447
+  lon: 19.019997
+  name: Budapest-Kelenföld
+  offset_minutes: 81
+waypoints:
+- lat: 47.735552
+  lon: 18.177501
+  name: Szőny
+  offset_minutes: 4
+- lat: 47.73139
+  lon: 18.216388
+  name: Almásfüzitő felső
+  offset_minutes: 6
+  stopped_minutes: 1
+- lat: 47.725278
+  lon: 18.262224
+  name: Almásfüzitő
+  offset_minutes: 11
+  stopped_minutes: 7
+- lat: 47.664996
+  lon: 18.327504
+  name: Tata
+  offset_minutes: 23
+  stopped_minutes: 1
+- lat: 47.64611
+  lon: 18.348611
+  name: Tóvároskert
+  offset_minutes: 27
+- lat: 47.619448
+  lon: 18.375282
+  name: Vértesszőlős
+  offset_minutes: 30
+- lat: 47.585558
+  lon: 18.393053
+  name: Tatabánya
+  offset_minutes: 34
+  stopped_minutes: 1
+- lat: 47.563337
+  lon: 18.42528
+  name: Alsogalla
+  offset_minutes: 38
+- lat: 47.518337
+  lon: 18.495836
+  name: Szarliget
+  offset_minutes: 42
+  stopped_minutes: 1
+- lat: 47.484996
+  lon: 18.527496
+  name: Szar
+  offset_minutes: 46
+- lat: 47.484169
+  lon: 18.617496
+  name: Bicske
+  offset_minutes: 51
+  stopped_minutes: 1
+- lat: 47.486389
+  lon: 18.642774
+  name: Bicske alsó
+  offset_minutes: 54
+- lat: 47.493608
+  lon: 18.746114
+  name: Herceghalom
+  offset_minutes: 58
+  stopped_minutes: 1
+- lat: 47.480277
+  lon: 18.834442
+  name: Biatorbágy
+  offset_minutes: 64
+  stopped_minutes: 1
+- lat: 47.450001
+  lon: 18.908612
+  name: Törökbálint
+  offset_minutes: 69
+- lat: 47.447502
+  lon: 18.965001
+  name: Budaörs
+  offset_minutes: 73
+  stopped_minutes: 1

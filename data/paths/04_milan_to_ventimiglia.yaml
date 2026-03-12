@@ -1,0 +1,64 @@
+name: Milan Centrale to Ventimiglia
+transport: train
+start:
+  lat: 45.486388
+  lon: 9.204163
+  name: Milan Centrale
+  datetime: '2025-09-09T11:10:00Z'
+  offset_minutes: 0
+end:
+  lat: 43.792218
+  lon: 7.610277
+  name: Ventimiglia
+  offset_minutes: 224
+waypoints:
+- lat: 45.18889
+  lon: 9.144448
+  name: Pavia
+  offset_minutes: 24
+  stopped_minutes: 2
+- lat: 44.99778
+  lon: 9.007776
+  name: Voghera
+  offset_minutes: 39
+  stopped_minutes: 2
+- lat: 44.417778
+  lon: 8.920553
+  name: Genoa Piazza Principe
+  offset_minutes: 94
+  stopped_minutes: 14
+- lat: 44.306671
+  lon: 8.470275
+  name: Savona
+  offset_minutes: 139
+  stopped_minutes: 2
+- lat: 44.169163
+  lon: 8.340282
+  name: Finale Ligure Marina
+  offset_minutes: 151
+  stopped_minutes: 2
+- lat: 44.046946
+  lon: 8.221669
+  name: Albenga
+  offset_minutes: 166
+  stopped_minutes: 2
+- lat: 44.00778
+  lon: 8.170556
+  name: Alassio
+  offset_minutes: 175
+  stopped_minutes: 2
+- lat: 43.925277
+  lon: 8.073059
+  name: Diano
+  offset_minutes: 189
+  stopped_minutes: 2
+- lat: 43.897221
+  lon: 8.031107
+  name: Imperia
+  offset_minutes: 196
+  stopped_minutes: 2
+- lat: 43.821388
+  lon: 7.766671
+  name: Sanremo
+  offset_minutes: 210
+  stopped_minutes: 2

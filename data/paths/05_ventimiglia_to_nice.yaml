@@ -1,0 +1,64 @@
+name: Ventimiglia to Nice Ville
+transport: train
+start:
+  lat: 43.792218
+  lon: 7.610277
+  name: Ventimiglia
+  datetime: '2025-09-09T15:18:00Z'
+  offset_minutes: 0
+end:
+  lat: 43.704448
+  lon: 7.261945
+  name: Nice Ville
+  offset_minutes: 56
+waypoints:
+- lat: 43.785279
+  lon: 7.51722
+  name: Menton Garavan
+  offset_minutes: 10
+  stopped_minutes: 5
+- lat: 43.774447
+  lon: 7.493336
+  name: Menton
+  offset_minutes: 18
+  stopped_minutes: 1
+- lat: 43.761943
+  lon: 7.481389
+  name: Carnoles
+  offset_minutes: 21
+  stopped_minutes: 1
+- lat: 43.76028
+  lon: 7.457226
+  name: Cap Martin Roquebrune
+  offset_minutes: 25
+  stopped_minutes: 1
+- lat: 43.738058
+  lon: 7.419445
+  name: Monaco-Monte-Carlo
+  offset_minutes: 30
+  stopped_minutes: 3
+- lat: 43.720556
+  lon: 7.39361
+  name: Cap-d'Ail
+  offset_minutes: 36
+  stopped_minutes: 1
+- lat: 43.721941
+  lon: 7.356943
+  name: Eze
+  offset_minutes: 41
+  stopped_minutes: 1
+- lat: 43.706668
+  lon: 7.331665
+  name: Beaulieu-sur-Mer
+  offset_minutes: 45
+  stopped_minutes: 1
+- lat: 43.706947
+  lon: 7.314163
+  name: Villefranche-sur-Mer
+  offset_minutes: 48
+  stopped_minutes: 1
+- lat: 43.705832
+  lon: 7.290279
+  name: Nice Riquier
+  offset_minutes: 51
+  stopped_minutes: 1

@@ -1,0 +1,52 @@
+name: Hamburg Hbf to Stockholm Central
+transport: train
+start:
+  lat: 53.552778
+  lon: 10.006945
+  name: Hamburg Hbf
+  datetime: '2025-09-14T22:03:00Z'
+  offset_minutes: 0
+end:
+  lat: 59.330001
+  lon: 18.058052
+  name: Stockholm Central
+  offset_minutes: 712
+waypoints:
+- lat: 54.822774
+  lon: 9.359721
+  name: Padborg
+  offset_minutes: 114
+  stopped_minutes: 20
+- lat: 55.629169
+  lon: 12.648892
+  name: Copenhagen Airport
+  offset_minutes: 336
+  stopped_minutes: 2
+- lat: 55.609447
+  lon: 13.000829
+  name: Malmö C
+  offset_minutes: 358
+- lat: 55.708058
+  lon: 13.186663
+  name: Lund C
+  offset_minutes: 392
+- lat: 56.157501
+  lon: 13.76306
+  name: Hässleholm C
+  offset_minutes: 426
+- lat: 56.898608
+  lon: 14.556107
+  name: Alvesta Station
+  offset_minutes: 479
+- lat: 57.652218
+  lon: 14.693893
+  name: Nässjö C
+  offset_minutes: 522
+- lat: 58.416391
+  lon: 15.624726
+  name: Linköping C
+  offset_minutes: 585
+- lat: 58.596113
+  lon: 16.183055
+  name: Norrköping C
+  offset_minutes: 624

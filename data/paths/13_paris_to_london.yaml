@@ -1,0 +1,13 @@
+name: Paris Nord to London St Pancras Intl
+transport: train
+start:
+  lat: 48.880275
+  lon: 2.355282
+  name: Paris Nord
+  datetime: '2025-09-12T11:08:00Z'
+  offset_minutes: 0
+end:
+  lat: 51.530555
+  lon: -0.125274
+  name: London St Pancras Intl
+  offset_minutes: 82

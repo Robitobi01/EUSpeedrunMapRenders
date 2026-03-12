@@ -1,0 +1,49 @@
+name: Madrid-Puerta de Atocha to Narbonne
+transport: train
+start:
+  lat: 40.406386
+  lon: -3.690836
+  name: Madrid-Puerta de Atocha
+  datetime: '2025-09-11T13:18:00Z'
+  offset_minutes: 0
+end:
+  lat: 43.190552
+  lon: 3.005552
+  name: Narbonne
+  offset_minutes: 329
+waypoints:
+- lat: 40.587222
+  lon: -3.124165
+  name: Guadalajara Yebes
+  offset_minutes: 26
+  stopped_minutes: 2
+- lat: 41.658611
+  lon: -0.911668
+  name: Zaragoza-Delicias
+  offset_minutes: 85
+  stopped_minutes: 3
+- lat: 41.191945
+  lon: 1.272774
+  name: Camp de Tarragona
+  offset_minutes: 142
+  stopped_minutes: 2
+- lat: 41.379442
+  lon: 2.140556
+  name: Barcelona-Sants
+  offset_minutes: 184
+  stopped_minutes: 12
+- lat: 41.979166
+  lon: 2.816941
+  name: Girona
+  offset_minutes: 235
+  stopped_minutes: 3
+- lat: 42.264726
+  lon: 2.943608
+  name: Figueres Vilafant
+  offset_minutes: 252
+  stopped_minutes: 3
+- lat: 42.695831
+  lon: 2.879443
+  name: Perpignan
+  offset_minutes: 282
+  stopped_minutes: 6

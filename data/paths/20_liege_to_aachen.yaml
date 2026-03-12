@@ -1,0 +1,71 @@
+name: Liege-Guillemins to Aachen Hbf
+transport: train
+start:
+  lat: 50.624443
+  lon: 5.566669
+  name: Liege-Guillemins
+  datetime: '2025-09-14T10:08:00Z'
+  offset_minutes: 0
+end:
+  lat: 50.767776
+  lon: 6.091387
+  name: Aachen Hbf
+  offset_minutes: 94
+waypoints:
+- lat: 50.643886
+  lon: 5.611112
+  name: Bressoux
+  offset_minutes: 8
+  stopped_minutes: 1
+- lat: 50.737779
+  lon: 5.6925
+  name: Vise
+  offset_minutes: 18
+  stopped_minutes: 1
+- lat: 50.771947
+  lon: 5.710002
+  name: Eijsden
+  offset_minutes: 22
+  stopped_minutes: 2
+- lat: 50.837496
+  lon: 5.717499
+  name: Maastricht Randwyck
+  offset_minutes: 30
+  stopped_minutes: 2
+- lat: 50.849721
+  lon: 5.705831
+  name: Maastricht
+  offset_minutes: 35
+  stopped_minutes: 9
+- lat: 50.882496
+  lon: 5.750004
+  name: Meerssen
+  offset_minutes: 49
+- lat: 50.869165
+  lon: 5.833055
+  name: Valkenburg
+  offset_minutes: 54
+  stopped_minutes: 1
+- lat: 50.890829
+  lon: 5.975004
+  name: Heerlen
+  offset_minutes: 66
+  stopped_minutes: 4
+- lat: 50.896393
+  lon: 6.019725
+  name: Landgraaf
+  offset_minutes: 74
+- lat: 50.896115
+  lon: 6.057777
+  name: Eygelshoven Markt
+  offset_minutes: 77
+- lat: 50.870837
+  lon: 6.094444
+  name: Herzogenrath
+  offset_minutes: 81
+  stopped_minutes: 1
+- lat: 50.78028
+  lon: 6.070829
+  name: Aachen West
+  offset_minutes: 89
+  stopped_minutes: 1

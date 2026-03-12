@@ -1,0 +1,94 @@
+name: Ruse to Sofia North
+transport: train
+start:
+  lat: 43.833335
+  lon: 25.95611
+  name: Ruse
+  datetime: '2025-09-20T06:20:00Z'
+  offset_minutes: 0
+end:
+  lat: 42.726385
+  lon: 23.316391
+  name: Sofia North
+  offset_minutes: 360
+waypoints:
+- lat: 43.69811
+  lon: 25.940352
+  name: Ivanovo
+  offset_minutes: 20
+  stopped_minutes: 1
+- lat: 43.59557
+  lon: 25.882866
+  name: Dve Mogili
+  offset_minutes: 36
+  stopped_minutes: 1
+- lat: 43.482207
+  lon: 25.810466
+  name: Borovo
+  offset_minutes: 51
+  stopped_minutes: 2
+- lat: 43.489938
+  lon: 25.759516
+  name: Morunitsa
+  offset_minutes: 60
+  stopped_minutes: 1
+- lat: 43.486288
+  lon: 25.730328
+  name: Byala
+  offset_minutes: 73
+  stopped_minutes: 1
+- lat: 43.376512
+  lon: 25.630538
+  name: Polski Trambesh
+  offset_minutes: 87
+  stopped_minutes: 1
+- lat: 43.312365
+  lon: 25.636264
+  name: Petko Karavelovo
+  offset_minutes: 95
+  stopped_minutes: 1
+- lat: 43.139718
+  lon: 25.681948
+  name: Gorna Oryahovitsa
+  offset_minutes: 115
+  stopped_minutes: 26
+- lat: 43.23264
+  lon: 25.295672
+  name: Pavlikeni
+  offset_minutes: 165
+  stopped_minutes: 1
+- lat: 43.351387
+  lon: 25.143053
+  name: Levski
+  offset_minutes: 178
+  stopped_minutes: 1
+- lat: 43.420559
+  lon: 24.614721
+  name: Pleven
+  offset_minutes: 205
+  stopped_minutes: 2
+- lat: 43.282224
+  lon: 24.078892
+  name: Cherven Bryag - N/T
+  offset_minutes: 241
+  stopped_minutes: 1
+- lat: 43.150344
+  lon: 23.925312
+  name: Roman
+  offset_minutes: 261
+  stopped_minutes: 1
+- lat: 43.142226
+  lon: 23.715
+  name: Mezdra
+  offset_minutes: 274
+  stopped_minutes: 1
+- lat: 43.089774
+  lon: 23.557509
+  name: Zverino
+  offset_minutes: 291
+  stopped_minutes: 1
+- lat: 42.958801
+  lon: 23.351072
+  name: Svoge
+  offset_minutes: 329
+  stopped_minutes: 1

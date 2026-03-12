@@ -1,0 +1,49 @@
+name: Crewe to Holyhead
+transport: train
+start:
+  lat: 53.086669
+  lon: -2.431663
+  name: Crewe
+  datetime: '2025-09-12T16:45:00Z'
+  offset_minutes: 0
+end:
+  lat: 53.30472
+  lon: -4.629723
+  name: Holyhead
+  offset_minutes: 122
+waypoints:
+- lat: 53.193892
+  lon: -2.878607
+  name: Chester
+  offset_minutes: 20
+  stopped_minutes: 6
+- lat: 53.246668
+  lon: -3.131671
+  name: Flint
+  offset_minutes: 38
+  stopped_minutes: 2
+- lat: 53.333612
+  lon: -3.405833
+  name: Prestatyn
+  offset_minutes: 52
+  stopped_minutes: 1
+- lat: 53.315552
+  lon: -3.487779
+  name: Rhyl
+  offset_minutes: 58
+  stopped_minutes: 1
+- lat: 53.293331
+  lon: -3.724168
+  name: Colwyn Bay
+  offset_minutes: 69
+  stopped_minutes: 1
+- lat: 53.280557
+  lon: -3.807498
+  name: Llandudno Junction
+  offset_minutes: 76
+  stopped_minutes: 2
+- lat: 53.21944
+  lon: -4.134445
+  name: Bangor (Gwynedd)
+  offset_minutes: 94
+  stopped_minutes: 1

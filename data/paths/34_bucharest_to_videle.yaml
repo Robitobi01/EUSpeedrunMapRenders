@@ -1,0 +1,59 @@
+name: Bucharest North to Videle
+transport: train
+start:
+  lat: 44.44639
+  lon: 26.074165
+  name: Bucharest North
+  datetime: '2025-09-19T12:18:00Z'
+  offset_minutes: 0
+end:
+  lat: 44.283892
+  lon: 25.5375
+  name: Videle
+  offset_minutes: 84
+waypoints:
+- lat: 44.461978
+  lon: 26.051629
+  name: Bucharest Basarab H
+  offset_minutes: 5
+  stopped_minutes: 1
+- lat: 44.476019
+  lon: 26.023016
+  name: Carpati H
+  offset_minutes: 10
+  stopped_minutes: 1
+- lat: 44.480756
+  lon: 26.008562
+  name: Bucureștii Noi
+  offset_minutes: 17
+  stopped_minutes: 1
+- lat: 44.472756
+  lon: 25.985181
+  name: Chiajna
+  offset_minutes: 27
+  stopped_minutes: 1
+- lat: 44.433059
+  lon: 25.941943
+  name: Parc Divertisment Chiajna
+  offset_minutes: 34
+  stopped_minutes: 1
+- lat: 44.406937
+  lon: 25.90141
+  name: Domnestii de Sus
+  offset_minutes: 40
+  stopped_minutes: 1
+- lat: 44.373227
+  lon: 25.814287
+  name: Grădinari
+  offset_minutes: 51
+  stopped_minutes: 1
+- lat: 44.336596
+  lon: 25.689795
+  name: Vadu Lat
+  offset_minutes: 64
+  stopped_minutes: 1
+- lat: 44.314842
+  lon: 25.629037
+  name: Anghelești
+  offset_minutes: 70
+  stopped_minutes: 1

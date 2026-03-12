@@ -1,0 +1,39 @@
+name: Badajoz to Madrid-Atocha Cercanías
+transport: train
+start:
+  lat: 38.890832
+  lon: -6.98167
+  name: Badajoz
+  datetime: '2025-09-11T06:36:00Z'
+  offset_minutes: 0
+end:
+  lat: 40.406665
+  lon: -3.689443
+  name: Madrid-Atocha Cercanías
+  offset_minutes: 250
+waypoints:
+- lat: 39.461108
+  lon: -6.385559
+  name: Cáceres
+  offset_minutes: 46
+  stopped_minutes: 2
+- lat: 40.022223
+  lon: -6.099442
+  name: Plasencia-Ciudad
+  offset_minutes: 82
+  stopped_minutes: 5
+- lat: 39.894999
+  lon: -5.545553
+  name: Navalmoral de la Mata
+  offset_minutes: 127
+  stopped_minutes: 1
+- lat: 39.970553
+  lon: -4.826389
+  name: Talavera de la Reina
+  offset_minutes: 165
+  stopped_minutes: 2
+- lat: 40.328612
+  lon: -3.77111
+  name: Leganés
+  offset_minutes: 233
+  stopped_minutes: 1

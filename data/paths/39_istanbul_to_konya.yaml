@@ -1,0 +1,29 @@
+name: Istanbul (Söğütlüçeşme) to Konya YHT
+transport: train
+start:
+  lat: 40.990559
+  lon: 29.037774
+  name: Istanbul (Söğütlüçeşme)
+  datetime: '2025-09-21T15:45:00Z'
+  offset_minutes: 0
+end:
+  lat: 37.867221
+  lon: 32.47639
+  name: Konya YHT
+  offset_minutes: 297
+waypoints:
+- lat: 40.880001
+  lon: 29.231114
+  name: Istanbul(Pendik)
+  offset_minutes: 32
+  stopped_minutes: 2
+- lat: 40.761388
+  lon: 29.917782
+  name: İzmit YHT
+  offset_minutes: 85
+  stopped_minutes: 2
+- lat: 39.78
+  lon: 30.507501
+  name: Eskişehir
+  offset_minutes: 189
+  stopped_minutes: 2

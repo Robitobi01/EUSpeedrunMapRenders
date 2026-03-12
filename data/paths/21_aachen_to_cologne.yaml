@@ -1,0 +1,48 @@
+name: Aachen Hbf to Cologne Hbf
+transport: train
+start:
+  lat: 50.767776
+  lon: 6.091387
+  name: Aachen Hbf
+  datetime: '2025-09-14T11:51:00Z'
+  offset_minutes: 0
+end:
+  lat: 50.943056
+  lon: 6.958613
+  name: Cologne Hbf
+  offset_minutes: 53
+waypoints:
+- lat: 50.770275
+  lon: 6.116386
+  name: Aachen-Rothe Erde
+  offset_minutes: 2
+  stopped_minutes: 1
+- lat: 50.794447
+  lon: 6.217218
+  name: Stolberg(Rheinl)Hbf
+  offset_minutes: 9
+  stopped_minutes: 1
+- lat: 50.813612
+  lon: 6.251944
+  name: Eschweiler Hbf
+  offset_minutes: 12
+  stopped_minutes: 1
+- lat: 50.817774
+  lon: 6.353333
+  name: Langerwehe
+  offset_minutes: 18
+- lat: 50.809441
+  lon: 6.482499
+  name: Düren
+  offset_minutes: 25
+  stopped_minutes: 1
+- lat: 50.916107
+  lon: 6.713612
+  name: Horrem
+  offset_minutes: 36
+  stopped_minutes: 1
+- lat: 50.951668
+  lon: 6.917226
+  name: Cologne-Ehrenfeld
+  offset_minutes: 45
+  stopped_minutes: 1

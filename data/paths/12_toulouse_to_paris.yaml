@@ -1,0 +1,26 @@
+name: Toulouse Matabiau to Paris Austerlitz
+transport: train
+start:
+  lat: 43.611113
+  lon: 1.45361
+  name: Toulouse Matabiau
+  datetime: '2025-09-11T22:16:00Z'
+  offset_minutes: 0
+end:
+  lat: 48.841387
+  lon: 2.366392
+  name: Paris Austerlitz
+  offset_minutes: 527
+waypoints:
+- lat: 44.014441
+  lon: 1.341388
+  name: Montauban Ville Bourbon
+  offset_minutes: 39
+- lat: 44.449168
+  lon: 1.43333
+  name: Cahors
+  offset_minutes: 86
+- lat: 47.926663
+  lon: 1.906666
+  name: Les Aubrais Orléans
+  offset_minutes: 456

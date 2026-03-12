@@ -1,7 +1,8 @@
 __pycache__/
 .venv/
-manim_tile_cache/
 media/
 manim.cfg
 tilemap_settings.json
 .idea
+/data/route_cache/
+/data/manim_tile_cache/

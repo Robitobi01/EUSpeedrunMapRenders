@@ -1,0 +1,58 @@
+name: Holyhead to London Euston
+transport: train
+start:
+  lat: 53.30472
+  lon: -4.629723
+  name: Holyhead
+  datetime: '2025-09-13T08:48:00Z'
+  offset_minutes: 0
+end:
+  lat: 51.525836
+  lon: -0.133058
+  name: London Euston
+  offset_minutes: 227
+waypoints:
+- lat: 53.21944
+  lon: -4.134445
+  name: Bangor (Gwynedd)
+  offset_minutes: 26
+  stopped_minutes: 1
+- lat: 53.280557
+  lon: -3.807498
+  name: Llandudno Junction
+  offset_minutes: 44
+  stopped_minutes: 1
+- lat: 53.293331
+  lon: -3.724168
+  name: Colwyn Bay
+  offset_minutes: 50
+  stopped_minutes: 2
+- lat: 53.315552
+  lon: -3.487779
+  name: Rhyl
+  offset_minutes: 61
+  stopped_minutes: 2
+- lat: 53.333612
+  lon: -3.405833
+  name: Prestatyn
+  offset_minutes: 67
+  stopped_minutes: 2
+- lat: 53.246668
+  lon: -3.131671
+  name: Flint
+  offset_minutes: 81
+  stopped_minutes: 2
+- lat: 53.193892
+  lon: -2.878607
+  name: Chester
+  offset_minutes: 96
+  stopped_minutes: 8
+- lat: 53.086669
+  lon: -2.431663
+  name: Crewe
+  offset_minutes: 124
+  stopped_minutes: 2
+- lat: 52.801666
+  lon: -2.12167
+  name: Stafford
+  offset_minutes: 145

@@ -1,0 +1,67 @@
+name: Syracuse to Rome Termini
+transport: train
+start:
+  lat: 37.068889
+  lon: 15.280556
+  name: Syracuse
+  datetime: '2025-09-08T17:46:00Z'
+  offset_minutes: 0
+end:
+  lat: 41.900555
+  lon: 12.501667
+  name: Rome Termini
+  offset_minutes: 769
+waypoints:
+- lat: 37.243055
+  lon: 15.218333
+  name: Augusta
+  offset_minutes: 20
+  stopped_minutes: 2
+- lat: 37.300559
+  lon: 14.997504
+  name: Lentini
+  offset_minutes: 41
+  stopped_minutes: 2
+- lat: 37.506664
+  lon: 15.09972
+  name: Catania Centrale
+  offset_minutes: 69
+  stopped_minutes: 3
+- lat: 37.600556
+  lon: 15.163337
+  name: Acireale
+  offset_minutes: 83
+  stopped_minutes: 2
+- lat: 37.73028
+  lon: 15.193055
+  name: Giarre-Riposto
+  offset_minutes: 95
+  stopped_minutes: 2
+- lat: 37.845557
+  lon: 15.282498
+  name: Taormina-Giardini
+  offset_minutes: 116
+  stopped_minutes: 2
+- lat: 38.184999
+  lon: 15.561388
+  name: Messina Centrale
+  offset_minutes: 169
+  stopped_minutes: 20
+- lat: 38.216668
+  lon: 15.634165
+  name: Villa San Giovanni
+  offset_minutes: 269
+  stopped_minutes: 20
+- lat: 38.921386
+  lon: 16.255275
+  name: Lamezia Terme Centrale
+  offset_minutes: 394
+  stopped_minutes: 3
+- lat: 41.258887
+  lon: 13.60583
+  name: Formia-Gaeta
+  offset_minutes: 669
+- lat: 41.538056
+  lon: 12.945554
+  name: Latina
+  offset_minutes: 706

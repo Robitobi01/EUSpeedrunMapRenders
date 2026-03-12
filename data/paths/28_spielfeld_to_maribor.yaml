@@ -1,0 +1,28 @@
+name: Spielfeld-Strass to Maribor
+transport: train
+start:
+  lat: 46.709443
+  lon: 15.629167
+  name: Spielfeld-Strass
+  datetime: '2025-09-17T20:32:00Z'
+  offset_minutes: 0
+end:
+  lat: 46.561948
+  lon: 15.657501
+  name: Maribor
+  offset_minutes: 19
+waypoints:
+- lat: 46.674169
+  lon: 15.65778
+  name: Šentilj
+  offset_minutes: 4
+  stopped_minutes: 2
+- lat: 46.661108
+  lon: 15.659164
+  name: Cirknica
+  offset_minutes: 9
+- lat: 46.609725
+  lon: 15.68028
+  name: Pesnica
+  offset_minutes: 13
+  stopped_minutes: 1

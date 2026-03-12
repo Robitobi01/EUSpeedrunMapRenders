@@ -31,6 +31,7 @@ dependencies = [
     "pyglet==2.1.13",
     "pyglm==2.8.3",
     "pygments==2.19.2",
+    "pyyaml>=6.0.3",
     "requests==2.32.5",
     "rich==14.3.3",
     "scipy==1.17.1",
