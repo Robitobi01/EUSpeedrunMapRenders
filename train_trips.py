@@ -31,19 +31,39 @@ class TrainTripScene(TileMapScene):
 
     def construct(self):
         route = self.load_geojson(self.trip["geojson_path"])
-        start_marker = self.create_marker(
+        start_marker = MapMarker(
             self.trip["from_label"],
-            self.trip["start"]["lat"],
-            self.trip["start"]["lon"],
+            route.start,
+            label_direction=route.start_label_direction(),
         )
-        end_marker = self.create_marker(
+        end_marker = MapMarker(
             self.trip["to_label"],
-            self.trip["end"]["lat"],
-            self.trip["end"]["lon"],
+            route.end,
+            label_direction=route.end_label_direction(),
         )
+        frame_width = getattr(self.camera, "frame_width", float(config["frame_width"]))
+        frame_height = getattr(self.camera, "frame_height", float(config["frame_height"]))
+        start_marker.choose_label_direction_with_route(frame_width, frame_height, route.points, 0)
+        end_marker.choose_label_direction_with_route(frame_width, frame_height, route.points, -1)
+        start_marker.clamp_label_within_frame(frame_width, frame_height)
+        end_marker.clamp_label_within_frame(frame_width, frame_height)
+        start_marker.add_to_scene(self, foreground=True)
+        end_marker.add_to_scene(self, foreground=True)
+        atmosphere = self.create_map_atmosphere(start_marker.dot.get_center(), end_marker.dot.get_center())
+        self.play(FadeIn(atmosphere, run_time=0.8))
         self.play(*start_marker.animate_creation())
+        start_marker.show_final_state()
+        Geojson.force_foreground(self, start_marker.foreground_mobjects())
         self.play(*end_marker.animate_creation())
-        route.create_and_animate(self, dash_animate_time=6, keep_on_top=[start_marker, end_marker])
+        end_marker.show_final_state()
+        Geojson.force_foreground(self, start_marker.foreground_mobjects() + end_marker.foreground_mobjects())
+        marker_front = start_marker.foreground_mobjects() + end_marker.foreground_mobjects()
+        route.create_and_animate(
+            self,
+            dash_animate_time=6,
+            keep_on_top=marker_front,
+        )
+        self.play(end_marker.animate_arrival())
         self.wait(0.4)
 
 
