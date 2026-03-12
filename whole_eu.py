@@ -151,7 +151,7 @@ class VisitedMaltaScene(VisitedScene):
         # Malta is so small we need to point to it
         malta_object = self.load_eu_country(EU_COUNTRIES[self.index]).route_lines[0]
         arrow = Arrow(malta_object.get_right() + 1 * RIGHT, malta_object.get_right() + 0.1 * LEFT).set_color(DARK_BLUE)
-        label = Text("Malta", font="Open Sans", font_size=20).next_to(arrow, buff=0.1).set_color(DARK_BLUE)
+        label = Text("Malta", font="Open Sans").scale(0.4).next_to(arrow, buff=0.1).set_color(DARK_BLUE)
         return super().animate_creation(country) + [Create(arrow), Write(label)]
 
 for index in range(1, len(EU_COUNTRIES)):
