@@ -1,3 +1,3 @@
 from __future__ import annotations
 
-__all__ = ["core", "europe", "paths"]
+__all__ = ["core", "europe", "routes"]
