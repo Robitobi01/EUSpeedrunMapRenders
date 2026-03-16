@@ -1,5 +1,5 @@
 name: Pozzallo to Syracuse
-transport: train
+transport: bus
 start:
   lat: 36.733888
   lon: 14.848337

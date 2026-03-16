@@ -11,7 +11,7 @@ PATH_RENDER_MANIFEST: list[object] = []
 SCENE_NAME_BY_PATH: dict[str, str] = {}
 
 if __name__ != "__main__":
-    from rendering.paths import scenes as _impl
+    from rendering.routes import scenes as _impl
 
     PathScene = _impl.PathScene
     PATH_SPECS = list(_impl.PATH_SPECS)
@@ -25,7 +25,7 @@ if __name__ != "__main__":
         _base = getattr(_impl, _scene_name)
         globals()[_scene_name] = type(_scene_name, (_base,), {"__module__": __name__})
 else:
-    from rendering.paths.models import load_path_specs, scene_name_for_identifier
+    from rendering.routes.paths import load_path_specs, scene_name_for_identifier
 
 
     def get_scene_name_for_path(identifier: str) -> str:

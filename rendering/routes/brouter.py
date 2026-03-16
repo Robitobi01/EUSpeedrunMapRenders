@@ -8,7 +8,9 @@ from typing import Any, TypedDict
 
 import requests
 
-from .models import PathPoint, PathSpec
+from .geojson import build_feature_collection, load_geojson_feature, load_geojson_line_coordinates
+from .geometry import haversine_km
+from .paths import PathPoint, PathSpec
 
 DEFAULT_BROUTER_URL = "https://brouter.de/brouter"
 BROUTER_TIMEOUT_SECONDS = 10
@@ -38,10 +40,10 @@ def _geojson_candidates_for_spec(spec: PathSpec, root: Path) -> list[Path]:
 
 
 def ensure_geojson_for_spec(
-        spec: PathSpec,
-        root: Path = DEFAULT_GEOJSON_ROOT,
-        endpoint: str = DEFAULT_BROUTER_URL,
-        timeout: int = BROUTER_TIMEOUT_SECONDS,
+    spec: PathSpec,
+    root: Path = DEFAULT_GEOJSON_ROOT,
+    endpoint: str = DEFAULT_BROUTER_URL,
+    timeout: int = BROUTER_TIMEOUT_SECONDS,
 ) -> Path:
     path, _ = ensure_geojson_for_spec_with_status(
         spec=spec,
@@ -65,11 +67,11 @@ def find_cached_geojson(spec: PathSpec, root: Path = DEFAULT_GEOJSON_ROOT) -> Pa
 
 
 def ensure_geojson_for_spec_with_status(
-        spec: PathSpec,
-        root: Path = DEFAULT_GEOJSON_ROOT,
-        endpoint: str = DEFAULT_BROUTER_URL,
-        timeout: int = BROUTER_TIMEOUT_SECONDS,
-        progress_callback: Callable[[RouteProgressEvent], None] | None = None,
+    spec: PathSpec,
+    root: Path = DEFAULT_GEOJSON_ROOT,
+    endpoint: str = DEFAULT_BROUTER_URL,
+    timeout: int = BROUTER_TIMEOUT_SECONDS,
+    progress_callback: Callable[[RouteProgressEvent], None] | None = None,
 ) -> tuple[Path, bool]:
     target = geojson_path_for_spec(spec, root=root)
     target.parent.mkdir(parents=True, exist_ok=True)
@@ -91,60 +93,33 @@ def ensure_geojson_for_spec_with_status(
             session=session,
             progress_callback=progress_callback,
         )
-    payload = {
-        "type": "FeatureCollection",
-        "features": [
-            {
-                "type": "Feature",
-                "properties": {
-                    "path": spec.identifier,
-                    "transport": spec.transport,
-                    "profile": profile,
-                    "pointCount": len(points),
-                    "fallbackSegments": fallback_segments,
-                },
-                "geometry": {
-                    "type": "LineString",
-                    "coordinates": coordinates,
-                },
-            }
-        ],
-    }
+    payload = build_feature_collection(
+        identifier=spec.identifier,
+        transport=spec.transport,
+        profile=profile,
+        point_count=len(points),
+        fallback_segments=fallback_segments,
+        coordinates=coordinates,
+    )
     with target.open("w", encoding="utf-8") as handle:
         json.dump(payload, handle, ensure_ascii=False)
     return target, False
 
 
 def load_existing_route(path: Path) -> tuple[list[list[float]], int]:
-    with path.open(encoding="utf-8") as handle:
-        payload = json.load(handle)
-    features = payload.get("features")
-    if not isinstance(features, list) or not features:
-        raise ValueError(f'GeoJSON "{path.as_posix()}" has no features')
-    feature = features[0] if isinstance(features[0], dict) else {}
-    geometry = feature.get("geometry") if isinstance(feature.get("geometry"), dict) else {}
-    coordinates = geometry.get("coordinates")
-    if not isinstance(coordinates, list) or len(coordinates) < 2:
-        raise ValueError(f'GeoJSON "{path.as_posix()}" has invalid coordinates')
-    clean: list[list[float]] = []
-    for coordinate in coordinates:
-        if not isinstance(coordinate, list) or len(coordinate) < 2:
-            continue
-        clean.append([float(coordinate[0]), float(coordinate[1])])
-    if len(clean) < 2:
-        raise ValueError(f'GeoJSON "{path.as_posix()}" has fewer than two valid coordinates')
-    properties = feature.get("properties") if isinstance(feature.get("properties"), dict) else {}
-    fallback_segments = int(properties.get("fallbackSegments", 0) or 0)
-    return clean, fallback_segments
+    coordinates = [[lon, lat] for lon, lat in load_geojson_line_coordinates(path)]
+    properties = load_geojson_feature(path).get("properties")
+    fallback_segments = int(properties.get("fallbackSegments", 0) or 0) if isinstance(properties, dict) else 0
+    return coordinates, fallback_segments
 
 
 def route_path(
-        points: list[PathPoint],
-        profile: str,
-        timeout: int,
-        endpoint: str,
-        session: requests.Session,
-        progress_callback: Callable[[RouteProgressEvent], None] | None = None,
+    points: list[PathPoint],
+    profile: str,
+    timeout: int,
+    endpoint: str,
+    session: requests.Session,
+    progress_callback: Callable[[RouteProgressEvent], None] | None = None,
 ) -> tuple[list[list[float]], int]:
     total_segments = max(1, len(points) - 1)
     if progress_callback is not None:
@@ -200,11 +175,11 @@ def route_path(
 
 
 def request_brouter_route(
-        points: list[PathPoint],
-        profile: str,
-        timeout: int,
-        endpoint: str,
-        session: requests.Session,
+    points: list[PathPoint],
+    profile: str,
+    timeout: int,
+    endpoint: str,
+    session: requests.Session,
 ) -> dict[str, Any]:
     lonlats = "|".join(f"{point.lon},{point.lat}" for point in points)
     response = session.get(
@@ -275,16 +250,6 @@ def concat_coordinates(parts: list[list[list[float]]]) -> list[list[float]]:
     if len(merged) < 2:
         raise ValueError("Merged route has fewer than two coordinates")
     return merged
-
-
-def haversine_km(lat1: float, lon1: float, lat2: float, lon2: float) -> float:
-    radius = 6371.0
-    phi1 = math.radians(lat1)
-    phi2 = math.radians(lat2)
-    delta_phi = math.radians(lat2 - lat1)
-    delta_lambda = math.radians(lon2 - lon1)
-    a = math.sin(delta_phi / 2) ** 2 + math.cos(phi1) * math.cos(phi2) * math.sin(delta_lambda / 2) ** 2
-    return float(2 * radius * math.atan2(math.sqrt(a), math.sqrt(max(0.0, 1.0 - a))))
 
 
 def fallback_segment_coords(start: PathPoint, end: PathPoint) -> list[list[float]]:

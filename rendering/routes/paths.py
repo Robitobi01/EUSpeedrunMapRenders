@@ -1,73 +1,22 @@
 from __future__ import annotations
 
 import math
-import re
-import unicodedata
 from dataclasses import dataclass
 from pathlib import Path
 from typing import Any, Literal
 
 import yaml
 
-MAX_MERCATOR_LAT = 85.0511287798066
+from .geometry import compute_center_zoom
+from .naming import scene_name_for_identifier, slugify
+
 DEFAULT_PATHS_DIR = Path("data/paths")
 TransportType = Literal["train", "walking", "bus"]
 ALLOWED_TRANSPORTS: tuple[TransportType, ...] = ("train", "walking", "bus")
 
 
-def slugify(text: str) -> str:
-    value = unicodedata.normalize("NFKD", text).encode("ascii", "ignore").decode("ascii")
-    value = value.lower()
-    value = re.sub(r"[^a-z0-9]+", "_", value).strip("_")
-    return value or "path"
-
-
-def scene_name_for_identifier(identifier: str) -> str:
-    return normalize_path_identifier(identifier)
-
-
 def normalize_path_identifier(identifier: str) -> str:
     return slugify(identifier)
-
-
-def clamp_lat(lat: float) -> float:
-    return max(min(lat, MAX_MERCATOR_LAT), -MAX_MERCATOR_LAT)
-
-
-def latlon_to_global_pixel(lat: float, lon: float, zoom: float, tile_size: int = 256) -> tuple[float, float]:
-    lat = clamp_lat(lat)
-    sin_lat = math.sin(math.radians(lat))
-    n = 2.0 ** zoom
-    x = (lon + 180.0) / 360.0 * n * tile_size
-    y = (0.5 - math.log((1 + sin_lat) / (1 - sin_lat)) / (4 * math.pi)) * n * tile_size
-    return x, y
-
-
-def compute_center_zoom(
-        coordinates: list[list[float]],
-        width_px: int = 1920,
-        height_px: int = 1080,
-        padding: float = 1.2,
-) -> tuple[float, float, float]:
-    if not coordinates:
-        return 50.0, 10.0, 4.0
-    lons = [float(coord[0]) for coord in coordinates]
-    lats = [float(coord[1]) for coord in coordinates]
-    min_lon, max_lon = min(lons), max(lons)
-    min_lat, max_lat = min(lats), max(lats)
-    center_lon = (min_lon + max_lon) / 2.0
-    center_lat = (min_lat + max_lat) / 2.0
-    if math.isclose(min_lon, max_lon) and math.isclose(min_lat, max_lat):
-        return center_lat, center_lon, 14.0
-    for step in range(64, 7, -1):
-        zoom = step / 4.0
-        left, top = latlon_to_global_pixel(max_lat, min_lon, zoom)
-        right, bottom = latlon_to_global_pixel(min_lat, max_lon, zoom)
-        span_x = abs(right - left) * padding
-        span_y = abs(bottom - top) * padding
-        if span_x <= width_px and span_y <= height_px:
-            return center_lat, center_lon, zoom
-    return center_lat, center_lon, 2.0
 
 
 def load_yaml_file(path: Path) -> Any:
@@ -227,7 +176,6 @@ def _parse_point(value: Any, label: str, path: Path) -> PathPoint:
     name_raw = value.get("name")
     name = str(name_raw).strip() if isinstance(name_raw, str) and name_raw.strip() else None
     minutes_raw = value.get("offset_minutes")
-    offset_minutes: int | None
     if minutes_raw is None:
         offset_minutes = None
     else:
@@ -236,7 +184,6 @@ def _parse_point(value: Any, label: str, path: Path) -> PathPoint:
         except Exception as exc:
             raise ValueError(f'Path config "{path.as_posix()}" field {label} has invalid offset_minutes') from exc
     stopped_raw = value.get("stopped_minutes")
-    stopped_minutes: int | None
     if stopped_raw is None:
         stopped_minutes = None
     else:
