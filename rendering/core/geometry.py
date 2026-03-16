@@ -1,10 +1,9 @@
 from __future__ import annotations
 
-from bisect import bisect_right
 from collections.abc import Callable, Sequence
 
 import numpy as np
-from manim import RIGHT, VMobject, interpolate, inverse_interpolate, smooth
+from manim import RIGHT, VMobject, interpolate, smooth
 from manim.typing import Point3DLike
 
 
@@ -105,32 +104,67 @@ def sample_polyline(points: Sequence[Point3DLike], step: float = 0.18) -> list[n
     return samples
 
 
-def route_rate(route: VMobject, rate_func: Callable[[float], float] = smooth) -> Callable[[float], float]:
+def route_distance_lookup(
+    route: VMobject,
+    lookup: tuple[np.ndarray, np.ndarray] | None = None,
+) -> tuple[np.ndarray, np.ndarray]:
+    if lookup is not None:
+        fractions = np.asarray(lookup[0], dtype=float)
+        proportions = np.asarray(lookup[1], dtype=float)
+        cached = (fractions, proportions)
+        setattr(route, "_route_distance_lookup", cached)
+        return cached
+    cached = getattr(route, "_route_distance_lookup", None)
+    if (
+        isinstance(cached, tuple)
+        and len(cached) == 2
+        and isinstance(cached[0], np.ndarray)
+        and isinstance(cached[1], np.ndarray)
+    ):
+        return cached
     curves = route.get_curve_functions_with_lengths()
     if not curves:
-        return rate_func
-    lengths = [float(length) for _, length in curves]
-    total = sum(lengths)
+        cached = (
+            np.array([0.0, 1.0], dtype=float),
+            np.array([0.0, 1.0], dtype=float),
+        )
+        setattr(route, "_route_distance_lookup", cached)
+        return cached
+    lengths = np.array([max(0.0, float(length)) for _, length in curves], dtype=float)
+    total = float(np.sum(lengths))
     if total <= 1e-9:
-        return rate_func
-    curve_fraction = 1 / len(lengths)
-    cumulative = [0.0]
-    running = 0.0
-    for length in lengths:
-        running += length / total
-        cumulative.append(running)
+        cached = (
+            np.array([0.0, 1.0], dtype=float),
+            np.array([0.0, 1.0], dtype=float),
+        )
+        setattr(route, "_route_distance_lookup", cached)
+        return cached
+    cumulative = np.concatenate(([0.0], np.cumsum(lengths)))
+    fractions = np.maximum.accumulate((cumulative / total).astype(float))
+    proportions = np.linspace(0.0, 1.0, len(lengths) + 1, dtype=float)
+    cached = (fractions, proportions)
+    setattr(route, "_route_distance_lookup", cached)
+    return cached
 
+
+def route_proportion_for_distance(
+    route: VMobject,
+    distance_fraction: float,
+    lookup: tuple[np.ndarray, np.ndarray] | None = None,
+) -> float:
+    fractions, proportions = route_distance_lookup(route, lookup=lookup)
+    clamped = float(np.clip(distance_fraction, 0.0, 1.0))
+    return float(np.interp(clamped, fractions, proportions))
+
+
+def route_rate(
+    route: VMobject,
+    rate_func: Callable[[float], float] = smooth,
+    lookup: tuple[np.ndarray, np.ndarray] | None = None,
+) -> Callable[[float], float]:
+    fractions, proportions = route_distance_lookup(route, lookup=lookup)
     def mapped(t: float) -> float:
-        eased = rate_func(t)
-        if eased <= 0:
-            return 0.0
-        if eased >= cumulative[-1]:
-            return 1.0
-        index = bisect_right(cumulative, eased) - 1
-        start = cumulative[index]
-        end = cumulative[index + 1]
-        interval_start = index * curve_fraction
-        interval_end = (index + 1) * curve_fraction
-        return float(interpolate(interval_start, interval_end, inverse_interpolate(start, end, eased)))
+        eased = float(np.clip(rate_func(t), 0.0, 1.0))
+        return float(np.interp(eased, fractions, proportions))
 
     return mapped

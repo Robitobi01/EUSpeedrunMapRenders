@@ -22,7 +22,7 @@ from manim import (
 )
 from manim.typing import Point3DLike
 
-from .geometry import as_point3, route_rate
+from .geometry import as_point3, route_distance_lookup, route_proportion_for_distance, route_rate
 
 
 @dataclass(frozen=True, slots=True)
@@ -109,19 +109,21 @@ class TripRoute:
         self.route_line = VMobject(joint_type=LineJointType.ROUND, cap_style=CapStyleType.ROUND)
         self.route_line.set_points_as_corners(self.render_points)
         self.route_line.set_fill(opacity=0)
-        self._length_rate = route_rate(self.route_line, linear)
+        self._distance_fractions, self._distance_proportions = route_distance_lookup(
+            self.route_line,
+            lookup=distance_lookup,
+        )
+        self._length_rate = route_rate(
+            self.route_line,
+            linear,
+            lookup=(self._distance_fractions, self._distance_proportions),
+        )
         self.path_length = float(
             sum(
                 np.linalg.norm((end - start)[:2])
                 for start, end in zip(self.render_points, self.render_points[1:])
             )
         )
-        if distance_lookup is None:
-            self._distance_fractions, self._distance_proportions = self._build_distance_lookup()
-        else:
-            fractions, proportions = distance_lookup
-            self._distance_fractions = np.asarray(fractions, dtype=float)
-            self._distance_proportions = np.asarray(proportions, dtype=float)
 
     @property
     def start(self) -> np.ndarray:
@@ -131,21 +133,12 @@ class TripRoute:
     def end(self) -> np.ndarray:
         return self.points[-1]
 
-    def _build_distance_lookup(self) -> tuple[np.ndarray, np.ndarray]:
-        curves = self.route_line.get_curve_functions_with_lengths()
-        if not curves:
-            return np.array([0.0, 1.0], dtype=float), np.array([0.0, 1.0], dtype=float)
-        lengths = np.array([max(0.0, float(length)) for _, length in curves], dtype=float)
-        total = float(np.sum(lengths))
-        if total <= 1e-9:
-            return np.array([0.0, 1.0], dtype=float), np.array([0.0, 1.0], dtype=float)
-        cumulative = np.concatenate(([0.0], np.cumsum(lengths)))
-        fractions = cumulative / total
-        proportions = np.linspace(0.0, 1.0, len(lengths) + 1, dtype=float)
-        return np.maximum.accumulate(fractions.astype(float)), proportions
-
     def _distance_to_proportion(self, distance_fraction: float) -> float:
-        return route_rate(self.route_line, rate_func=linear)(distance_fraction)
+        return route_proportion_for_distance(
+            self.route_line,
+            distance_fraction,
+            lookup=(self._distance_fractions, self._distance_proportions),
+        )
 
     @staticmethod
     def _inset_endpoints(points: Sequence[np.ndarray], amount: float = 0.15) -> list[np.ndarray]:
